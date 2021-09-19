@@ -6,7 +6,7 @@ import sound_2 from "./notification_sounds/sound_2.mp3"
 import sound_3 from "./notification_sounds/sound_3.mp3"
 import sound_4 from "./notification_sounds/sound_4.mp3"
 function PomodoroTimer() {
-    const {trackingNumber, setTrackingNumber} = useContext(Context)
+    const {trackingNumber, setTrackingNumber, background, other} = useContext(Context)
     const array = ["the first one", "the second one", "the third one", "the forth one"] 
     const [buttonName, setButtonName] = useState(false)
     const [pomoTrack, setPomoTrack] = useState(false)
@@ -62,16 +62,15 @@ function PomodoroTimer() {
     return (
         <>
          <div className="pomodoro_timer">
-
-            <div className="clock">
+            <div style={{background:`${other}`, border:`${other}`, backgroundRepeat:"no-repeat", backgroundSize:"100% 100%"}} className="clock">
               { minutes === 0 && seconds === 0
                 ? null
-                : <h1> {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
+                :<h1> {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1>
               }
             </div> 
 
             <button className="pushable">
-             <span className="front" onClick={handleStart}>
+             <span className="front" style={{background:"white", color:other, backgroundRepeat:"no-repeat", backgroundSize:"100% 100%"}}  onClick={handleStart}>
               {buttonName ? "pause" : "start"}
              </span>
             </button>
@@ -83,12 +82,12 @@ function PomodoroTimer() {
                {pomoTrack ? 
                 array.map((ele, key) => {
                  return ( 
-                  <Animated animationIn="zoomIn" animationOut="zoomOut" animationInDuration={700 + key*300} animationOutDuration={700 + key*300} isVisible={true}>
+                  <Animated className="element_container" animationIn="slideInLeft" animationInDuration={1000 + key*300} isVisible={true}>
                     <div className="element">
                       {pomo ? 
-                      (pomo.length % 4 == key ? <div>🍅 pomo number {key} is on track :)</div> 
-                      : ((pomo.length % 4) < key ? <div>😓 pomo number {key} is waiting </div> : <div>🎉pomo number {key} is done</div>))
-                      : (key == 0 ? <div>🍅 pomo number 1 is on track :)</div> : <div>😓 pomo number 1 is waiting </div>)}
+                      (pomo.length % 4 == key ? <div>🍅 pomo number {key + 1} is on track ...</div> 
+                      : ((pomo.length % 4) < key ? <div>🧐 pomo number {key + 1} is still waiting </div> : <div>🎉you completed pomo number {key + 1}</div>))
+                      : (key == 0 ? <div>🍅 pomo number {key + 1} is on track ... </div> : <div>🧐 pomo number {key + 1} is waiting </div>)}
                     </div>
                   </Animated>)
                   })

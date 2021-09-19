@@ -5,12 +5,11 @@ import LongBreack from "./Timer_sections/LongBreack"
 import {Context} from "./Context"
 
 function Timer() {
-    const {background, handleBackground, trackingNumber, setTrackingNumber} = useContext(Context)
+    const {handleBackground, trackingNumber, setTrackingNumber,other, background} = useContext(Context)
     handleBackground(trackingNumber)
     const design = {
-        border:"2px solid indianred",
         borderRadius: "10px",
-        background:"indianred",
+        background:other,
         cursor: "pointer",
         color:"white",
         padding:"10px"

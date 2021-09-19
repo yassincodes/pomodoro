@@ -3,19 +3,9 @@ import React, {useState, useEffect} from "react"
 const Context = React.createContext()
 
 function ContextProvider({children}) {
-    const [background, setBackground] = useState("rgb(216, 120, 116)")
+    const [background, setBackground] = useState()
+    const [other, setOther] = useState()
     const [coll, setColl] = useState("")
-
-    const colors_collection_1 = [
-        {background:"#CD6464", other:"#DC7878"},
-        {background:"#B76471", other:"#FF7A91"},
-        {background:"#B973AA", other:"#C87DBE"}
-    ]
-    const colors_collection_2 = [
-        {background:"#FF4B4B", other:"#FF5A5A"},
-        {background:"#F5965A", other:"#F5A569"},
-        {background:"#B9D1F2", other:"#B9EBF0"}
-    ]
     // localStorage.setItem('colors_collection_1', JSON.stringify(colors_collection_1))
     // const retrievedCollection = localStorage.getItem("colors_collection_1")
     // background:`${JSON.parse(retrievedCollection)[1].other}`
@@ -26,6 +16,7 @@ function ContextProvider({children}) {
     const [isChecked3, setIsChecked3] = useState(false)
   
     let retrievedCollection = localStorage.getItem("colors_palette")
+    retrievedCollection === null && localStorage.setItem('colors_palette', 1)
     function handleChange() {
       setIsChecked(true)
       setIsChecked2(false)
@@ -44,43 +35,62 @@ function ContextProvider({children}) {
       setIsChecked3(true)
       localStorage.setItem('colors_palette', 3)
     }
-    
+    function handleChangeFavSound(ss) {
+      localStorage.setItem("fav_sound", ss)
+    }
+    // here is where you gonna paste
     // this section keeps track of changes
     useEffect(() => {
       setColl(retrievedCollection)
     }, [isChecked, isChecked2, isChecked3])
     
     // this section is responsible for changing the background, clock and line colors
+    let colors_collection_number = localStorage.getItem("colors_palette")
     function handleBackground(number) { 
-      if (isChecked) {
+      if (colors_collection_number == 1) {
+        
           if (number == 1) {
-            setBackground("red")
+            setBackground("#CD6464")
+            setOther("#DC7878")
           } else if (number == 2) {
-            setBackground("blue")
+            setBackground("#B76471")
+            setOther("#FF7A91")
           } else if (number == 3) {
-            setBackground("purple")
+            setBackground("#B973AA")
+            setOther("#C87DBE")
           }
-        } else if (isChecked2) {
+        } else if (colors_collection_number == 2) {
           if (number == 1) {
-            setBackground("black")
+            setBackground("#FF9696")
+            setOther("#FFB0B0")
           } else if (number == 2) {
-            setBackground("white")
+            setBackground("#F5965A")
+            setOther("#F5A569")
           } else if (number == 3) {
-            setBackground("yellow")
+            setBackground("#00A2A2")
+            setOther("#02B4CE")
           }
-        } else if (isChecked3) {
+        } else if (colors_collection_number == 3) {
+             //https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
+    //https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260
+    //https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
+    //background: "url(https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260)", backgroundRepeat:"no-repeat", backgroundSize:"100% 100%"
+    // background:`${background}`}}
           if (number == 1) {
-            setBackground("green")
+            setBackground("url(https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center fixed")
+            setOther("#C9C9C9")
           } else if (number == 2) {
-            setBackground("pink")
+            setBackground("url(https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center fixed")
+            setOther("#C9C9C9")
         } else if (number == 3) {
-            setBackground("silver")
+            setBackground("url(https://images.pexels.com/photos/210012/pexels-photo-210012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center fixed")
+            setOther("#C9C9C9")
           }
         }
       }
     const [trackingNumber, setTrackingNumber] = useState(1)
     return (
-        <Context.Provider value={{background, handleBackground, isChecked, isChecked2, isChecked3, handleChange, handleChange2, handleChange3, retrievedCollection, coll, trackingNumber, setTrackingNumber}}>
+        <Context.Provider value={{handleChangeFavSound, background,other, handleBackground, isChecked, isChecked2, isChecked3, handleChange, handleChange2, handleChange3, retrievedCollection, coll, trackingNumber, setTrackingNumber}}>
             {children}
         </Context.Provider>
     )

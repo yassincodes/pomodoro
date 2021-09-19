@@ -5,12 +5,19 @@ body {
     font-family: 'Varela Round', sans-serif;
     color:white;
 }
+.app {
+    background: #CD6464;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
 .header {
     display: flex;
     justify-content: space-between;
     margin: 0 4vh;
     padding:0;
-    border-bottom: 3px solid indianred;
 }
 .header_title {
     margin-left: 10px;
@@ -24,17 +31,15 @@ body {
     margin-right:20px;
 }
 .header_buttons_settings {
-    border:2px solid indianred;
     border-radius: 10px;
-    padding:5px;
-    background:indianred;
+    padding:10px;
+    background:#DC7878;
     cursor: pointer;
 }
 .header_buttons_statics {
-    border:2px solid indianred;
     border-radius: 10px;
-    padding:5px;
-    background:indianred;
+    padding:10px;
+    background:#DC7878;
     cursor: pointer;
     margin-left:10px
 
@@ -64,9 +69,8 @@ body {
     display:flex;
     justify-content: center;
     align-items:center;
-    border:indianred;
     border-radius: 10px;
-    background: indianred;
+
 }
 .pomodoro_timer {
 
@@ -79,62 +83,66 @@ body {
 }
 .pushable {
     margin-bottom:6vh;
-    background: hsl(340deg 100% 40%);
     border-radius: 12px;
     border: none;
     padding: 0;
     cursor: pointer;
     outline-offset: 4px;
+    color:white;
   }
   .front {
     display: block;
     padding: 12px 42px;
     border-radius: 12px;
     font-size: 1.25rem;
-    background: indianred;
-    color: white;
+    background: #DC7878;
     transform: translateY(-6px);
-  }
+   }
   .pushable:active .front {
     transform: translateY(-2px);
   }
   .element {
       border:2px rgb(255, 202, 202) solid;
       border-radius: 15px;
-      margin-top:5px;
-      margin-bottom:5px;
-      margin-left:30vh;
-      margin-right:30vh;
+      margin-top:7px;
+      margin-bottom:7px;
       padding:8px;
+      margin-left:30vw;
+      margin-right:30vw;
   }
 .footer {
-    border-top:2px solid indianred;
+    border-top:2px solid #DC7878;
     margin-left:30vw;
     margin-right:30vw;
     margin-top:10vh;
     text-align: left;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 800px) {
     .header {
         margin: 0 4vh;
     }
     .timer {
-        margin-left:10vw;
-        margin-right:10vw;
+        margin-left:20vw;
+        margin-right:20vw;
     }
     .clock {
-        margin-left:10vw;
-        margin-right:10vw;
+        margin-left:20vw;
+        margin-right:20vw;
     }
     .element {
-        margin-left:10vw;
-        margin-right:10vw;
+        margin-left:20vw;
+        margin-right:20vw;
     }
     .footer {
-        border-top:2px solid indianred;
+        border-top:2px solid #DC7878;
         margin-left:10vw;
         margin-right:10vw;
         text-align: left;
     }
   }
+@media only screen and (max-width: 400px) {
+    .app {
+        font-size:12px;
+    }
+}
