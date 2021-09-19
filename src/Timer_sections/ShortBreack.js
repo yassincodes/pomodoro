@@ -1,20 +1,17 @@
 import React, {useState, useEffect, useContext} from "react"
 import {Context} from "../Context"
-import sound_1 from "./notification_sounds/sound_1.mp3"
-import sound_2 from "./notification_sounds/sound_2.mp3"
-import sound_3 from "./notification_sounds/sound_3.mp3"
-import sound_4 from "./notification_sounds/sound_4.mp3"
+import sound_2 from "../sound_2.mp3"
 
 function ShortBreack() {
-  const {trackingNumber, setTrackingNumber, other} = useContext(Context)
+  const {timeNum, setTrackingNumber, other} = useContext(Context)
   const [buttonName, setButtonName] = useState(false)
-  const [audio] = useState(new Audio(sound_1))
+  const [audio] = useState(new Audio(sound_2))
   const [playing, setPlaying] = useState(false);
   function handleStart() {
        setButtonName(!buttonName)
   }
-  const [ minutes, setMinutes ] = useState(0)
-  const [seconds, setSeconds ] =  useState(2)
+  const [ minutes, setMinutes ] = useState(timeNum ? 25 : 5)
+  const [seconds, setSeconds ] =  useState(0)
   useEffect(()=>{
     if (buttonName) {
       let myInterval = setInterval(() => {

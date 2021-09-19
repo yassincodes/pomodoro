@@ -1,27 +1,28 @@
 import React, {useState, useEffect, useContext} from "react"
 import {Context} from "../Context"
 import {Animated} from "react-animated-css";
-import sound_1 from "./notification_sounds/sound_1.mp3"
-import sound_2 from "./notification_sounds/sound_2.mp3"
-import sound_3 from "./notification_sounds/sound_3.mp3"
-import sound_4 from "./notification_sounds/sound_4.mp3"
+import sound_2 from "../sound_2.mp3"
+
 function PomodoroTimer() {
-    const {trackingNumber, setTrackingNumber, background, other} = useContext(Context)
+    const {setTrackingNumber, other} = useContext(Context)
     const array = ["the first one", "the second one", "the third one", "the forth one"] 
     const [buttonName, setButtonName] = useState(false)
     const [pomoTrack, setPomoTrack] = useState(false)
     // the code that is responsible for notifications
-    const [audio] = useState(new Audio(sound_1))
+    const [audio] = useState(new Audio(sound_2))
     const [playing, setPlaying] = useState(false);
     function handleStart() {
          setButtonName(!buttonName)
          setPlaying(!playing)
          setPomoTrack(true)
     }
-
     // the code that is responsible for the timer
-    const [ minutes, setMinutes ] = useState(0)
-    const [seconds, setSeconds ] =  useState(3)
+  
+
+    
+
+    const [ minutes, setMinutes ] = useState(25)
+    const [seconds, setSeconds ] =  useState(0)
     let pomo = localStorage.getItem("pomo")
 
     useEffect(()=>{

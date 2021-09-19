@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react"
 const Context = React.createContext()
 
 function ContextProvider({children}) {
+    const [timerNum, setTimerNum] = useState(true)
     const [background, setBackground] = useState()
     const [other, setOther] = useState()
     const [coll, setColl] = useState("")
@@ -38,6 +39,7 @@ function ContextProvider({children}) {
     function handleChangeFavSound(ss) {
       localStorage.setItem("fav_sound", ss)
     }
+    
     // here is where you gonna paste
     // this section keeps track of changes
     useEffect(() => {
@@ -90,7 +92,7 @@ function ContextProvider({children}) {
       }
     const [trackingNumber, setTrackingNumber] = useState(1)
     return (
-        <Context.Provider value={{handleChangeFavSound, background,other, handleBackground, isChecked, isChecked2, isChecked3, handleChange, handleChange2, handleChange3, retrievedCollection, coll, trackingNumber, setTrackingNumber}}>
+        <Context.Provider value={{handleChangeFavSound, background,other, handleBackground, isChecked,setIsChecked, isChecked2, isChecked3, handleChange, handleChange2, handleChange3, retrievedCollection, coll, trackingNumber, setTrackingNumber}}>
             {children}
         </Context.Provider>
     )
