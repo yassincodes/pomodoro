@@ -50,6 +50,10 @@ body {
     margin-left:10px;
     margin-right:10px;
     cursor: pointer;
+    padding:10px;
+}
+.timer div:hover {
+    transform: translateY(2.4px)
 }
 .clock {
     height:35vh;
