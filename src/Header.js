@@ -61,10 +61,10 @@ function Header() {
          contentLabel="Example Modal"
         >
         <div>
-          <h3 style={{color:other}}>time to choose your best style !</h3>
-          <div><input type="checkbox" name="isChecked" checked={(retrievedCollection == 1 || retrievedCollection == null)? true : isChecked} onChange={handleChange}/>#colors_palette_number_1</div>
-          <div><input type="checkbox" name="isChecked" checked={retrievedCollection == 2 ? true : isChecked2} onChange={handleChange2}/>#colors_palette_number_2</div>
-          <div><input type="checkbox" name="isChecked" checked={retrievedCollection == 3 ? true : isChecked3} onChange={handleChange3}/>#colors_palette_number_3</div>
+          <h3 style={{color:other}}>time to choose your style !</h3>
+          <div><input type="checkbox" name="isChecked" checked={(retrievedCollection == 1 || retrievedCollection == null)? true : isChecked} onChange={handleChange}/>#style_number_1</div>
+          <div><input type="checkbox" name="isChecked" checked={retrievedCollection == 2 ? true : isChecked2} onChange={handleChange2}/>#style_number_2</div>
+          <div><input type="checkbox" name="isChecked" checked={retrievedCollection == 3 ? true : isChecked3} onChange={handleChange3}/>#style_number_3</div>
         </div>
            {
            // <div>

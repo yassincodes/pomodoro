@@ -20,7 +20,6 @@ function Footer() {
            <li>after each 25 minutes of work you'll get a 5 minutes of rest</li>
            <br />
            <li>after 4 pomos you'll get 15 minutes of rest</li>
-           <br />
           </ul>
           <div>
             <h3>wann know more about how this web app works ?</h3>

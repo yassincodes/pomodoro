@@ -11,7 +11,7 @@ function App() {
     //background: "url(https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260)", backgroundRepeat:"no-repeat", backgroundSize:"100% 100%"
     // background:`${background}`}}
     return (
-        <div className="app" style={{ background:`${background}`, borderBottom:`${other}`, border:`${other}`}}>
+        <div className="app" style={{height:"200vh", background:`${background}`, borderBottom:`${other}`, border:`${other}`}}>
            <Header />
            <Timer />
            <Footer />
