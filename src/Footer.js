@@ -13,7 +13,7 @@ function Footer() {
           <ul>
            <li>customize the look of the web app as you want</li>
            <br />
-           <li>number of pomos and working hours is stored on local storage</li>
+           <li>number of pomos and working hours is stored in local storage</li>
            <br />
            <li>there is a notification sound 😁 <span style={{color:"blue", cursor:"pointer"}} onClick={() => audio.play()}>Listen</span></li>
            <br />
@@ -21,10 +21,6 @@ function Footer() {
            <br />
            <li>after 4 pomos you'll get 15 minutes of rest</li>
           </ul>
-          <div>
-            <h3>wann know more about how this web app works ?</h3>
-            <p style={{marginBottom:"30px",paddingBottom:"30px", cursor: "pointer"}}>test it on a (5s, 1s, 3s)timer</p>
-          </div>
          </div>
        </div>
       </>
