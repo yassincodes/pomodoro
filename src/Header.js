@@ -98,7 +98,7 @@ function Header() {
         <h2 style={{color:other}}>hi I'm statics</h2>
         <div>
           <p>total number of finished pomodoros :</p>
-          {pomo ? pomo.length + " pomos 🍅" : 0 + "you didn't finish a pomo yet 🍅"}
+          {pomo ? pomo.length + " pomos 🍅" : 0 + " : you didn't finish a pomo yet 🍅"}
           <p>total number of working hours :</p>
           {pomo && (pomo.length *25 > 60) ? ~~((pomo.length * 25)/60) + " hours" + (~~((pomo.length * 25)/60) % 60 !== 0 ? " and " + ~~((pomo.length * 25))%60 + " minutes 🕖" : "") : "you didn't finish an hour yet" }
         </div>

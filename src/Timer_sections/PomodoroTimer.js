@@ -86,7 +86,7 @@ function PomodoroTimer() {
                   <Animated className="element_container" animationIn="slideInLeft" animationInDuration={1000 + key*300} isVisible={true}>
                     <div className="element">
                       {pomo ? 
-                      (pomo.length % 4 == key ? <div>🍅 pomo number {key + 1} is on track ...</div> 
+                      (pomo.length % 4 == key ? <div>🍅 pomo number {key + 1} is on track</div> 
                       : ((pomo.length % 4) < key ? <div>🧐 pomo number {key + 1} is still waiting </div> : <div>🎉you completed pomo number {key + 1}</div>))
                       : (key == 0 ? <div>🍅 pomo number {key + 1} is on track ... </div> : <div>🧐 pomo number {key + 1} is waiting </div>)}
                     </div>
