@@ -70,16 +70,8 @@ body {
     justify-content: center;
     align-items:center;
     border-radius: 10px;
+    font-size:35px;
 
-}
-.pomodoro_timer {
-   font-size:35px;
-}
-.short_breack {
-   font-size:35px
-}
-.long_breack {
-   font-size:35px;
 }
 .pushable {
     margin-bottom:6vh;
